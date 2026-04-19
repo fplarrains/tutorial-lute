@@ -1,0 +1,8 @@
+/* Custom css to modify Lute's appearance. */
+
+div#read_pane_left > div#thetext {
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;              /* centra automáticamente */
+  transform: translateX(300px); /* desplaza 100px a la derecha */
+}

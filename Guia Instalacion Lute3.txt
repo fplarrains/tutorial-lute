@@ -1,0 +1,121 @@
+✅ Tutorial: Cómo instalar Lute 3 (para aprender inglés)
+
+Lute 3 es un programa gratuito y muy potente para aprender idiomas leyendo. 
+
+En este tutorial mas el video de YouTube te explico paso a paso cómo instalarlo en Windows, incluso si no tienes experiencia con computadoras.
+
+1) Instalar Python (obligatorio)
+
+Ve al sitio oficial de Python: https://www.python.org/downloads/
+Descarga la versión más reciente (la que aparezca como “Latest Python 3.x”).
+Durante la instalación marca todas las casillas, especialmente esta:
+
+✅ Add Python to PATH
+
+(Esto es muy importante para que funcione desde la terminal).
+Finaliza la instalación.
+
+Verifica que se instaló correctamente:
+
+Abre el Símbolo del sistema (presiona la tecla Windows y escribe “cmd” y Enter) o PowerShell.
+Escribe el siguiente comando y presiona Enter:
+
+python --version
+
+Deberías ver algo como: Python 3.12.3 (o cualquier versión 3.8 o superior).
+Si todo está bien, actualiza pip (el gestor de paquetes de Python) con este comando:
+
+python -m pip install --upgrade pip
+
+2) Crear la carpeta donde vamos a instalar Lute
+Vamos a crear una carpeta llamada lute3 para tener todo organizado.
+Opción fácil (con el mouse):
+
+Abre la carpeta Documentos.
+Botón derecho → Nuevo → Carpeta.
+Nómbrala lute3.
+
+Opción con comandos (recomendada):
+
+Abre PowerShell o Símbolo del sistema (como Administrador).
+Escribe uno por uno estos comandos (presiona Enter después de cada uno):
+
+cd Documents
+mkdir lute3
+cd lute3
+
+3) Crear un entorno virtual (muy importante)
+Este paso “aisla” Lute del resto de tu computadora para evitar problemas.
+En la misma ventana de PowerShell escribe:
+
+python -m venv myenv
+
+Se creará una carpeta llamada myenv dentro de lute3.
+
+4) Activar el entorno virtual
+Escribe este comando:
+
+myenv\Scripts\activate
+
+✅ Si todo está correcto, verás (myenv) al principio de la línea.
+
+Si te sale un error que dice “no se puede cargar porque la ejecución de scripts está deshabilitada”:
+Ejecuta este comando y presiona Y (o S) para confirmar:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+Luego vuelve a intentar activar con myenv\Scripts\activate.
+
+5) Instalar Lute 3
+Con el entorno activado, escribe:
+
+pip install lute3
+
+Este comando descargará e instalará Lute 3 y todas las herramientas que necesita. Puede tardar unos minutos.
+
+6) Ejecutar Lute por primera vez
+Escribe:
+
+python -m lute.main
+
+Se abrirá automáticamente una ventana del navegador en la dirección:
+
+http://localhost:5001
+
+¡Ya tienes Lute funcionando! 🎉
+
+Cómo abrir Lute las próximas veces (rápido)
+
+Cada vez que quieras usar Lute, abre PowerShell y escribe estos 3 comandos:
+
+cd C:\Users\TU_USUARIO\Documents\lute3
+
+myenv\Scripts\activate
+python -m lute.main
+
+Importante: Cambia TU_USUARIO por el nombre de tu usuario de Windows.
+
+7) Crear un archivo para abrir Lute con un solo clic (recomendado)
+
+Dentro de la carpeta lute3 crea un nuevo archivo de texto.
+Pégale el siguiente contenido:
+
+batch@echo off
+ECHO Iniciando Lute 3...
+cd C:\Users\TU_USUARIO\Documents\lute3
+call myenv\Scripts\activate
+python -m lute.main
+
+Guárdalo como Iniciar Lute.bat (asegúrate de que diga “Todos los archivos” en Tipo y no “.txt”).
+
+Ahora solo tienes que hacer doble clic en Iniciar Lute.bat y el programa se abrirá automáticamente.
+
+Actualizar Lute cuando salga una nueva versión
+
+Abre PowerShell, activa el entorno y escribe:
+
+pip install --upgrade lute3
+
+
+
+
